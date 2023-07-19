@@ -34,6 +34,7 @@ var myWeapons = [
 	"Westfall Staff",
 ];
 // Add 100 h3 elements to the page
+// How can i make the page display Accusation 1 and when clicked on it shows array index 0 instead of 1.
 for (var i = 1; i <= 100; i++) {
 	var h3 = $("<h3>Accusation " + i + "</h3>");
 	$("body").append(h3);
@@ -44,9 +45,9 @@ for (var i = 1; i <= 100; i++) {
 }
 
 function myAlert(i) {
-	var friends = myFriends[i];
-	var locations = myLocations[i];
-	var weapons = myWeapons[i];
+	var friends = myFriends[i % 5];
+	var locations = myLocations[i & 10];
+	var weapons = myWeapons[i % 20];
 	function alertMsg() {
 		// Alert message
 		alert(
@@ -63,5 +64,3 @@ function myAlert(i) {
 	}
 	return alertMsg;
 }
-// var fullAlertMsg = myAlert();
-// fullAlertMsg();
