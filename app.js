@@ -46,7 +46,7 @@ for (var i = 1; i <= 100; i++) {
 
 function myAlert(i) {
 	var friends = myFriends[i % 5];
-	var locations = myLocations[i & 10];
+	var locations = myLocations[i % 10];
 	var weapons = myWeapons[i % 20];
 	function alertMsg() {
 		// Alert message
